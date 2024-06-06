@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Sociale Media Etiquette voor Leerkrachten</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            margin-bottom: 10px;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .result {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #2c3e50;
+            background-color: #ecf0f1;
+        }
+    </style>
+    <script>
+        function checkQuiz() {
+            let correctAnswers = 0;
+            const totalQuestions = 5;
+
+            const answers = {
+                q1: 'a',
+                q2: 'b',
+                q3: 'b',
+                q4: 'a',
+                q5: 'c'
+            };
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const answer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (answer && answer.value === answers[`q${i}`]) {
+                    correctAnswers++;
+                }
+            }
+
+            document.getElementById('result').innerHTML = `Je hebt ${correctAnswers} van de ${totalQuestions} vragen correct beantwoord.`;
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <h1>Quiz Sociale Media Etiquette voor Leerkrachten</h1>
+    <div class="quiz-container">
+        <div class="question">
+            <h3>1. Wat is het belangrijkste doel van deze regelgeving?</h3>
+            <label><input type="radio" name="q1" value="a"> Het waarborgen van een professionele, respectvolle en veilige online omgeving.</label>
+            <label><input type="radio" name="q1" value="b"> Het beperken van het gebruik van sociale media door leerkrachten.</label>
+            <label><input type="radio" name="q1" value="c"> Het stimuleren van sociale media gebruik door leerkrachten.</label>
+        </div>
+
+        <div class="question">
+            <h3>2. Wat moet een leerkracht doen voordat hij/zij foto's of video's van studenten op sociale media plaatst?</h3>
+            <label><input type="radio" name="q2" value="a"> De foto's of video's bewerken.</label>
+            <label><input type="radio" name="q2" value="b"> Uitdrukkelijke toestemming krijgen.</label>
+            <label><input type="radio" name="q2" value="c"> Ze direct posten zonder enige controle.</label>
+        </div>
+
+        <div class="question">
+            <h3>3. Wat moet een leerkracht vermijden bij het plaatsen van content op sociale media?</h3>
+            <label><input type="radio" name="q3" value="a"> Het gebruik van hashtags.</label>
+            <label><input type="radio" name="q3" value="b"> Gevoelige of controversiële onderwerpen.</label>
+            <label><input type="radio" name="q3" value="c"> Het vermelden van de schoolnaam.</label>
+        </div>
+
+        <div class="question">
+            <h3>4. Wat wordt aangeraden met betrekking tot het accepteren van vriendschapsverzoeken van studenten?</h3>
+            <label><input type="radio" name="q4" value="a"> Het wordt afgeraden om vriendschapsverzoeken van studenten op persoonlijke accounts te accepteren.</label>
+            <label><input type="radio" name="q4" value="b"> Leerkrachten moeten alle vriendschapsverzoeken van studenten accepteren.</label>
+            <label><input type="radio" name="q4" value="c"> Leerkrachten mogen geen enkele vriendschapsverzoek accepteren, zelfs niet op professionele accounts.</label>
+        </div>
+
+        <div class="question">
+            <h3>5. Wat zijn mogelijke consequenties bij overtreding van de regelgeving?</h3>
+            <label><input type="radio" name="q5" value="a"> Er zijn geen consequenties.</label>
+            <label><input type="radio" name="q5" value="b"> Alleen een mondelinge waarschuwing.</label>
+            <label><input type="radio" name="q5" value="c"> Variërend van waarschuwingen tot schorsing of ontslag.</label>
+        </div>
+
+        <button onclick="checkQuiz()">Controleer Antwoorden</button>
+
+        <div id="result" class="result"></div>
+    </div>
+</body>
+</html>

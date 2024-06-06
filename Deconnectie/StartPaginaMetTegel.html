@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deconnectie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to left, #ea7d61, #efeff0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+        #tilesContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0; /* Geen spatie tussen de tegels */
+            color: #000;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 800px; /* Pas deze aan om de breedte van de container te regelen */
+        }
+        .tile {
+            background: linear-gradient(to bottom, #a3a2a2, #f8f8f9);
+            border: 2px solid rgb(80, 79, 77);
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #e01313;
+            transition: background-color 0.3s, color 0.3s;
+            opacity: 0.5;
+        }
+        .tile:hover {
+            background-color: #ccc;
+            color: #000;
+        }
+        #contentContainer {
+            width: 100%;
+            max-width: 1000px;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        h1 {
+            color: #f0ebeb;
+            font-size: 50px;
+            margin: 20px 0;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="hoofding">Deconnectie</h1>
+    <div id="tilesContainer">
+        <div class="tile" data-url="Deconnectie.html">Deconnectie</div>
+        <div class="tile" data-url="AnnBccV2.html">Aan/Bcc/CC</div>
+        <div class="tile" data-url="DeJuisteToolVoorHetJuisteDoel.html">De Juiste Tools</div>
+        <div class="tile" data-url="GTD.html">Get Things Done</div>
+        <div class="tile" data-url="MailEtiquette.html">Mail Etiquette</div>
+        <div class="tile" data-url="MailEtiqueteQuiz.html">Quiz</div>
+    </div>
+    <div id="contentContainer">
+        <p>Selecteer een pagina om de inhoud hier weer te geven.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tiles = document.querySelectorAll('.tile');
+            const contentContainer = document.getElementById('contentContainer');
+
+            function loadPage(url) {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(data => {
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = data;
+
+                        while (contentContainer.firstChild) {
+                            contentContainer.removeChild(contentContainer.firstChild);
+                        }
+
+                        while (tempDiv.firstChild) {
+                            contentContainer.appendChild(tempDiv.firstChild);
+                        }
+                    })
+                    .catch(error => {
+                        contentContainer.innerHTML = '<p>Er is een fout opgetreden bij het laden van de pagina.</p>';
+                    });
+            }
+
+            // Laad de eerste pagina automatisch
+            if (tiles.length > 0) {
+                const firstPageUrl = tiles[0].getAttribute('data-url');
+                loadPage(firstPageUrl);
+            }
+
+            tiles.forEach(tile => {
+                tile.addEventListener('click', function() {
+                    const url = tile.getAttribute('data-url');
+                    loadPage(url);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

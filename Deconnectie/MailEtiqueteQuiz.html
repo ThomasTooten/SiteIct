@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Mailetiquette voor Leerkrachten</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            margin-bottom: 10px;
+        }
+        .question label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .result {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #2c3e50;
+            background-color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz Mailetiquette voor Leerkrachten</h1>
+    <div class="quiz-container">
+        <form action="process_quiz.php" method="post">
+            <div class="question">
+                <h3>E-mailadres:</h3>
+                <input type="email" name="email" required>
+            </div>
+
+            <div class="question">
+                <h3>1. Wat is het belangrijkste doel van de mailetiquette regelgeving?</h3>
+                <label><input type="radio" name="q1" value="a"> Het beperken van het gebruik van e-mail door leerkrachten.</label>
+                <label><input type="radio" name="q1" value="b"> Het bevorderen van professioneel en respectvol e-mailgebruik.</label>
+                <label><input type="radio" name="q1" value="c"> Het verplicht stellen van dagelijkse e-mailchecks.</label>
+            </div>
+
+            <div class="question">
+                <h3>2. Hoe snel dient een leerkracht idealiter te reageren op een e-mail?</h3>
+                <label><input type="radio" name="q2" value="a"> Binnen 48 uur.</label>
+                <label><input type="radio" name="q2" value="b"> Binnen een week.</label>
+                <label><input type="radio" name="q2" value="c"> Onmiddellijk.</label>
+            </div>
+
+            <div class="question">
+                <h3>3. Wat moet altijd worden gecontroleerd voordat een e-mail wordt verzonden?</h3>
+                <label><input type="radio" name="q3" value="a"> Het aantal woorden.</label>
+                <label><input type="radio" name="q3" value="b"> De lay-out.</label>
+                <label><input type="radio" name="q3" value="c"> Spelling en grammatica.</label>
+            </div>
+
+            <div class="question">
+                <h3>4. Wat is een best practice bij het verzenden van e-mails naar grote groepen?</h3>
+                <label><input type="radio" name="q4" value="a"> Alle ontvangers in het 'Aan' veld zetten.</label>
+                <label><input type="radio" name="q4" value="b"> Gebruik van BCC (Blind Carbon Copy).</label>
+                <label><input type="radio" name="q4" value="c"> Elk bericht afzonderlijk sturen.</label>
+            </div>
+
+            <div class="question">
+                <h3>5. Welke onderwerpregel moet worden vermeden?</h3>
+                <label><input type="radio" name="q5" value="a"> Eindproject presentatie</label>
+                <label><input type="radio" name="q5" value="b"> Ouderavond details</label>
+                <label><input type="radio" name="q5" value="c"> Belangrijk</label>
+            </div>
+
+            <div class="question">
+                <h3>6. Wat moet een leerkracht vermijden bij het communiceren met studenten en ouders via e-mail?</h3>
+                <label><input type="radio" name="q6" value="a"> Het bespreken van gevoelige of persoonlijke informatie.</label>
+                <label><input type="radio" name="q6" value="b"> Het sturen van bevestigingsmails.</label>
+                <label><input type="radio" name="q6" value="c"> Het gebruiken van een professionele toon.</label>
+            </div>
+
+            <div class="question">
+                <h3>7. Waarom is het belangrijk om een duidelijke onderwerpregel te gebruiken?</h3>
+                <label><input type="radio" name="q7" value="a"> Zodat de e-mail beter opvalt.</label>
+                <label><input type="radio" name="q7" value="b"> Om de ontvanger te helpen de inhoud snel te begrijpen.</label>
+                <label><input type="radio" name="q7" value="c"> Om spamfilters te vermijden.</label>
+            </div>
+
+            <div class="question">
+                <h3>8. Wat is een verplichting voor leerkrachten volgens de mailetiquette regelgeving?</h3>
+                <label><input type="radio" name="q8" value="a"> Gebruik van het door de organisatie aangemaakte e-mailadres.</label>
+                <label><input type="radio" name="q8" value="b"> Het dagelijks versturen van een e-mailupdate.</label>
+                <label><input type="radio" name="q8" value="c"> Het wekelijks wijzigen van hun wachtwoord.</label>
+            </div>
+
+            <div class="question">
+                <h3>9. Hoe moeten leerkrachten omgaan met persoonlijke informatie van studenten?</h3>
+                <label><input type="radio" name="q9" value="a"> Door deze vrij te delen via e-mail.</label>
+                <label><input type="radio" name="q9" value="b"> Door deze veilig te bewaren en alleen met bevoegde personen te delen.</label>
+                <label><input type="radio" name="q9" value="c"> Door deze te delen met collega's zonder enige restricties.</label>
+            </div>
+
+            <div class="question">
+                <h3>10. Wat is een mogelijke sanctie bij overtreding van de mailetiquette regelgeving?</h3>
+                <label><input type="radio" name="q10" value="a"> Waarschuwing, schorsing of ontslag, afhankelijk van de ernst van de overtreding.</label>
+                <label><input type="radio" name="q10" value="b"> Alleen een mondelinge waarschuwing.</label>
+                <label><input type="radio" name="q10" value="c"> Er zijn geen sancties.</label>
+            </div>
+
+            <button type="submit">Verzend Antwoorden</button>
+        </form>
+    </div>
+</body>
+</html>
