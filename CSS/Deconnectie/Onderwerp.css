@@ -25,3 +25,17 @@ header ul li {
 h1, h2 {
     color: #b71c1c;
 }
+.button {
+    display: block;
+    width: max-content;
+    margin: 20px 0;
+    padding: 10px 20px;
+    color: white;
+    background-color: #b71c1c;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.button:hover {
+    background-color: #e37575;
+}
