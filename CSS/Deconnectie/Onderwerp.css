@@ -28,7 +28,7 @@ h1, h2 {
 .button {
     display: block;
     width: max-content;
-    margin: 20px 0;
+    margin: 5px 0;
     padding: 10px 20px;
     color: white;
     background-color: #b71c1c;
