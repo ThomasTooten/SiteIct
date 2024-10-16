@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MainIndex</title>
+    <style>
+        /* Algemene instellingen */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: url('/Afbeeldingen/IMG_5420.JPG') no-repeat center center;
+            background-size: cover;
+            color: #333;
+        }
+
+        /* Achtergrond overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        /* Container voor flex behavior */
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            padding: 1em 0;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            color: #618ba9;
+        }
+
+        /* Navigatiebalk */
+        .menubalk {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Main content styling */
+        main {
+            flex: 1;
+            max-width: 100%;
+            margin: 20px auto;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 8px;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Menu styling */
+        .menu {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .menu li {
+            list-style: none;
+            padding: 10px 20px;
+            background-color: #618ba9;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .menu li:hover {
+            background-color: #537d92;
+        }
+
+        /* Content secties */
+        .content-section {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Out of Office blok styling */
+        .copy-block {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .copy-button {
+            padding: 10px 20px;
+            background-color: #618ba9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 40px;
+        }
+
+        .copy-button:hover {
+            background-color: #537d92;
+        }
+
+        main h2, main h3 {
+            margin-bottom: 20px;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ffdd44;
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin-bottom: 0.5em;
+            color: #e6e6e6;
+        }
+
+        /* Flexcontainer voor "Let hier mee op"-sectie */
+       .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+       .section {
+            flex: 1 1 calc(33.333% - 20px);
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            color: #333;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Titels en content */
+        .section h3 {
+            color: #618ba9;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="menubalk">
+                <!-- Menubalk content zoals in het voorbeeld -->
+            </div>
+            <h1>Mail Etiquette</h1>
+        </header>
+        <main>
+            <!-- Menu als lijst met items -->
+            <ul class="menu">
+                <li onclick="showContent('algemeen')">Algemeen</li>
+                <li onclick="showContent('Aan/Bcc/CC')">Aan/Bcc/CC</li>
+                <li onclick="showContent('lethiermeeop')">Let op</li>
+            </ul>
+
+            <!-- Content secties -->
+            <section id="algemeen" class="content-section active">
+
+            </section>
+            <section id="Aan/Bcc/CC" class="content-section">
+                <h2>Aan/Bcc/CC</h2>
+                <div class="container">
+                    <section class="section">
+                        <h3>Aan:</h3>
+                        <p>Gebruik het 'Aan'-veld voor de primaire ontvangers van de e-mail. Dit zijn de mensen voor wie de informatie bedoeld is en van wie je een reactie verwacht.</p>
+                        <ul>
+                            <li>Plaats hier de personen aan wie de e-mail direct gericht is.</li>
+                            <li>Gebruik dit veld wanneer je actie of een antwoord van de ontvanger verwacht.</li>
+                        </ul>
+                        <div class="example">
+                            <h3>Voorbeeld:</h3>
+                            <p>Als je een verzoek stuurt aan een collega voor projectinformatie, gebruik je het 'Aan'-veld om hem of haar direct te bereiken en een antwoord te verwachten.</p>
+                        </div>
+                    </section>
+                    <section class="section">
+                        <h3>CC (Carbon Copy):</h3>
+                        <p>Gebruik het 'CC'-veld om personen te informeren die op de hoogte moeten zijn van de inhoud, maar van wie je geen directe actie of antwoord verwacht.</p>
+                        <ul>
+                            <li>Gebruik CC voor mensen die op de hoogte moeten zijn van de communicatie.</li>
+                            <li>Wees terughoudend met het gebruik van CC om onnodige e-mails te vermijden.</li>
+                        </ul>
+                        <div class="example">
+                            <h3>Voorbeeld:</h3>
+                            <p>Stel, je stuurt een update over een project aan de projectmanager in het 'Aan'-veld en voegt andere teamleden toe in CC zodat ze op de hoogte zijn zonder dat actie van hen vereist is.</p>
+                        </div>
+                    </section>
+                    <section class="section">
+                        <h3>BCC (Blind Carbon Copy):</h3>
+                        <p>Gebruik het 'BCC'-veld om de privacy van de ontvangers te beschermen. Ontvangers in het BCC-veld zijn niet zichtbaar voor anderen.</p>
+                        <ul>
+                            <li>Gebruik BCC bij het verzenden van e-mails naar een grote groep om privacy te waarborgen.</li>
+                            <li>Voorkom dat e-mailadressen van alle ontvangers zichtbaar zijn voor anderen.</li>
+                        </ul>
+                        <div class="example">
+                            <h3>Voorbeeld:</h3>
+                            <p>Wanneer je een nieuwsbrief verstuurt naar een grote groep klanten, gebruik je het BCC-veld zodat de e-mailadressen van de ontvangers niet zichtbaar zijn voor elkaar.</p>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <section id="lethiermeeop" class="content-section">
+                <h2>Let hier mee op</h2>
+                <div class="container">
+                    <section class="section">
+                        <h3>Vermijd ‘Reply All’ wanneer het niet nodig is:</h3>
+                        <p>Gebruik ‘Reply All’ alleen als alle betrokkenen je antwoord moeten zien.</p>  
+                    </section>
+                    <section class="section">
+                        <h3>Gebruik geen onnodige ‘CC’ en ‘BCC’</h3>
+                        <p>Voeg alleen mensen toe die echt op de hoogte moeten zijn van de e-mail. Het CC-en van te veel mensen kan rommelig en storend zijn.</p>  
+                    </section>   
+                    <section class="section">
+                        <h3>Gebruik geen te grote bijlagen</h3>
+                        <p>Grote bijlagen kunnen servers belasten en mailboxen snel vol laten lopen. Gebruik OneDrive en stuur een link, indien mogelijk.</p>  
+                    </section> 
+                    <section class="section">
+                        <h3>Begin geen nieuw onderwerp in een bestaand e-mailgesprek</h3>
+                        <p>Start een nieuwe e-mail als je over een ander onderwerp wilt communiceren. Het verwarren van verschillende onderwerpen in één e-mailthread kan leiden tot miscommunicatie en maakt het moeilijk om later informatie terug te vinden.</p>  
+                    </section>        
+                </div>
+            </section>
+            <section id="online" class="content-section">
+                <h2>Online</h2>
+                <iframe src="https://support.microsoft.com/nl-nl/topic/automatische-afwezigheidsberichten-verzenden-vanuit-outlook-com-of-webversie-van-outlook-0c193ab0-b9e1-4058-84be-a5b014242290" width="100%" height="1000" title="Embedded Webpage"></iframe>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>Contact</p>
+        <a href="mailto:thomas.tooten@dkomechelen.be">thomas.tooten@dkomechelen.be</a>
+        of bel me op <a href="tel:+32475587010">0475 58 70 10</a>
+    </footer>
+
+    <script>
+        function showContent(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function copyText() {
+            const text = document.getElementById('outOfOfficeText').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Tekst gekopieerd naar klembord!');
+            }).catch(err => {
+                alert('Kopiëren mislukt', err);
+            });
+        }
+    </script>
+</body>
+</html>
