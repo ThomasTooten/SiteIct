@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MainIndex</title>
+    <style>
+        /* Algemene instellingen */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: url('/Afbeeldingen/IMG_5420.JPG') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Houdt de achtergrond vast bij scrollen */
+    color: #333;
+}
+
+        /* Achtergrond overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            padding: 1em 0;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: #618ba9;
+        }
+
+        main {
+            flex: 1;
+            width: 100vw;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Menu container */
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        /* Menu styling */
+        .menu {
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+
+        .menu li {
+            list-style: none;
+            padding: 10px 20px;
+            background-color: #618ba9;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .menu li:hover {
+            background-color: #537d92;
+        }
+
+        /* Content secties */
+        .content-section {
+            display: none;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-top: 1px solid #ccc;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        iframe {
+            width: 100%;
+            height: 1000px;
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            width: 100%;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ffdd44;
+            text-decoration: underline;
+        }
+         /* Container voor flex behavior */
+         .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        /* Content secties */
+        .content-section {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Out of Office blok styling */
+        .copy-block {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .copy-button {
+            padding: 10px 20px;
+            background-color: #618ba9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 40px;
+        }
+
+        .copy-button:hover {
+            background-color: #537d92;
+        }
+
+        main h2, main h3 {
+            margin-bottom: 20px;
+        }
+        .section {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    color: #333;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Voeg extra ruimte toe onder elke sectie */
+}
+
+        /* Titels en content */
+        .section h3 {
+            color: #618ba9;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            margin-bottom: 10px;
+        }
+        body {
+    font-size: 18px; /* Verhoog de algemene lettergrootte voor de hele pagina */
+}
+main h2 {
+    font-size: 2em; /* Vergroot de subheaders in de main-secties */
+}
+.section h3 {
+    font-size: 1.8em; /* Vergroot de sectie-titels */
+}
+
+.section p, .section li {
+    font-size: 1.2em; /* Vergroot de paragrafen en lijstitems binnen de secties */
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Getting Things Done</h1>
+        </header>
+        <main>
+            <!-- Menu container met menu-items -->
+            <div class="menu-container">
+                <ul class="menu">
+                    <li onclick="showContent('algemeen')">Outlook</li>
+                    <li onclick="showContent('iPhone')">iPhone</li>
+                    <li onclick="showContent('Mac')">Mac</li>
+                    <li onclick="showContent('Andriod')">Android</li>
+                </ul>
+            </div>
+
+            <!-- Content secties -->
+            <section id="algemeen" class="content-section active">
+                <h2>Outlook-agenda gebruiken</h2>
+                <p>Een digitale agenda heeft veel voordelen. Zolang er een internetverbinding is, hebt u de planner bij de hand. Hoe werkt de Outlook-agenda precies?</p>
+                <div class="container">
+                    <section class="section">
+                        <h3>Een digitale agenda bijhouden</h3>
+                        <p>Wilt u de papieren agenda inwisselen voor een digitale variant? Wie Outlook al voor de e-mail gebruikt, heeft de agenda in een mum van tijd ingesteld.</p>
+                        <p>Een aantal voordelen van een digitale agenda:</p>
+                        <ul>
+                            <li>Hij opent op meerdere apparaten: computer, tablet of smartphone.</li>
+                            <li>Smartphone altijd op zak? Dan hebt u ook de agenda altijd bij de hand.</li>
+                            <li>Verplaats gemakkelijk een afspraak, zonder gekras of gestreep.</li>
+                            <li>Stel een herinnering in, zodat u nooit meer een afspraak vergeet.</li>
+                            <li>Nodig anderen uit, zodat de afspraak meteen bij iedereen in de agenda staat.</li>
+                            <li>Is er een afspraak die iedere week terugkomt? Voeg in één keer een hele reeks toe.</li>
+                        </ul>
+                        <p>De Outlook-agenda is beschikbaar via de Outlook-app op de computer, via <a href="https://outlook.live.com/calendar/" target="_blank">Outlook.com</a> en via de Outlook-app op tablet en smartphone. In dit artikel gebruiken we de versie via Outlook.com.</p>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Weergave Outlook-agenda</h3>
+                        <p>Om te beginnen is het handig om te weten hoe de navigatie van de Outlook-agenda werkt.</p>
+                        <ul>
+                            <li>Ga naar <a href="https://outlook.live.com/calendar/" target="_blank">https://outlook.live.com/calendar/</a>.</li>
+                            <li>Klik rechtsboven op Aanmelden.</li>
+                            <li>Log in met uw Outlook-account.</li>
+                        </ul>
+                        <p>In de agenda-interface:</p>
+                        <ul>
+                            <li>Links staat een klein overzicht van de maand. Klik op een datum om snel naar die dag te springen.</li>
+                            <li>Daaronder staat een overzicht van uw agenda’s. Denk aan een persoonlijke agenda, een verjaardagskalender en een gedeelde agenda. Klik op het bolletje voor de naam van de agenda om deze aan of uit te vinken.</li>
+                            <li>Bovenin staat de zoekbalk. Typ de naam van een afspraak in om die te zoeken.</li>
+                            <li>Klik op de pijlen onder de zoekbalk om te wisselen tussen weken. De pijl naar links gaat naar de vorige week, de pijl naar rechts naar de volgende week.</li>
+                            <li>Klik op de knop Vandaag om terug te gaan naar de datum van vandaag.</li>
+                            <li>In de bovenste balk rechts staat Week (of Dag, Werkweek of Maand). Klik erop om van overzicht te wisselen. Wissel zo makkelijk tussen week en maand bijvoorbeeld.</li>
+                            <li>Klik op Delen om iemand per mail toegang te geven tot uw agenda.</li>
+                            <li>Klik op Afdrukken om het huidige overzicht af te drukken.</li>
+                        </ul>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Een afspraak in Outlook zetten</h3>
+                        <p>Een afspraak gemaakt? Zet deze zo in de agenda:</p>
+                        <ul>
+                            <li>Ga naar de Outlook-agenda.</li>
+                            <li>Klik linksboven op Nieuwe gebeurtenis.</li>
+                            <li>Vul een titel in.</li>
+                            <li>Kies de datum en een begin- en eindtijd. Klik hiervoor op de datum om een uitklapmenu te openen. Klik op de dag en het tijdstip dat u de afspraak wilt maken.</li>
+                            <li>Optionele instellingen:</li>
+                            <ul>
+                                <li>Vul een locatie in. Als u vaker dezelfde locatie gebruikt, zal deze gesuggereerd worden.</li>
+                                <li>Klik op ‘Herhaling’ om de afspraak dagelijks, wekelijks, maandelijks, of volgens een ander ritme terug te laten komen. Stel eventueel ook een einddatum in.</li>
+                                <li>Klik op ‘Meer opties’ om nog meer informatie toe te voegen, zoals een beschrijving. Of nodig contactpersonen uit.</li>
+                                <li>Stel een herinnering in. Bijvoorbeeld 1 uur voor de afspraak, of 1 dag, of helemaal geen.</li>
+                            </ul>
+                            <li>Klaar? Klik dan op Opslaan.</li>
+                        </ul>
+                        <p>De afspraak is nu te zien in het overzicht van de agenda.</p>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Afspraak verplaatsen of verwijderen</h3>
+                        <p>Een afspraak verzetten of verwijderen is geen probleem.</p>
+                        <p>Er zijn twee manieren om een afspraak te verzetten:</p>
+                        <ol>
+                            <li>
+                                Ga naar de Outlook-agenda en ga naar de week waar de afspraak staat.
+                                <ul>
+                                    <li>Klik op de afspraak.</li>
+                                    <li>Klik op Bewerken.</li>
+                                    <li>Klik op Deze gebeurtenis om alleen deze specifieke afspraak te veranderen.</li>
+                                    <li>Is het een afspraak die vaker in de agenda staat? Klik dan op Deze en alle volgende gebeurtenissen om ook alle andere gebeurtenissen aan te passen.</li>
+                                    <li>Pas de tijd en of datum aan en klik op Opslaan.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                De andere manier om een afspraak te verzetten:
+                                <ul>
+                                    <li>Ga naar de Outlook-agenda en ga naar de week waar de afspraak staat.</li>
+                                    <li>Klik op de afspraak en houdt de muisknop ingedrukt.</li>
+                                    <li>Sleep de afspraak naar de juiste dag en tijdstip.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <p>Een afspraak verwijderen:</p>
+                        <ul>
+                            <li>Ga naar de Outlook-agenda en ga naar de week waar de afspraak staat.</li>
+                            <li>Klik op de afspraak.</li>
+                            <li>Klik op Verwijderen.</li>
+                            <li>Klik op Deze gebeurtenis om alleen deze specifieke afspraak te verwijderen.</li>
+                            <li>Is het een afspraak die vaker in de agenda staat? Klik dan op Deze en alle volgende gebeurtenissen om ze allemaal te verwijderen.</li>
+                        </ul>
+                    </section>
+                </div>
+            </section>
+
+            <section id="iPhone" class="content-section">
+                <h2>Agenda gebruiken op de iPhone</h2>
+                <p>Gebruik de app Agenda op de iPhone en zet uw afspraken overzichtelijk bij elkaar. Zo hebt u ze altijd bij de hand.</p>
+                <div class="container">
+                    <section class="section">
+                        <h3>Verschillende agenda's</h3>
+                        <p>In de app Agenda kunnen mensen meerdere agenda's beheren. Denk aan een agenda die bij een account van iCloud, Gmail of Outlook.com hoort. Of aan een agenda die alleen op het apparaat zelf staat.</p>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Agenda gekoppeld aan een bestaand account</h3>
+                        <p>Met een iPhone hebt u een Apple ID. Hiermee kunt u ook de iCloud-agenda gebruiken. Deze agenda ziet u ook op andere apparaten waarop u inlogt met uw Apple ID. Maar misschien gebruikt u wel een andere agenda, zoals die van Google. Hebt u bijvoorbeeld ook een Gmail-adres gekoppeld aan de app Mail op de iPhone? Dan kunt u de agenda die daarbij hoort ook inschakelen, zodat hij zichtbaar is op de iPhone. Doe dat zo:</p>
+                        <p>
+                            <li>Tik op de app Instellingen.</li>
+                            <li>Tik op een toestel met iOS 18 op Apps.</li>
+                            <li>Tik op Agenda > Agenda-accounts.</li>
+                            <li>U ziet de accounts die zijn gekoppeld aan het apparaat. Bijvoorbeeld Gmail, Outlook of iCloud. Tik op het account waarvan u de agenda wilt beheren.</li>
+                            <li>Staat de optie 'Agenda's' in het scherm, dan heeft het account een agendafunctie. Is het schuifje erachter groen, dan is de agenda ingeschakeld. Zo niet, tik op het schuifje.</li>
+                        </p>
+                        <p>Controleer in de app Agenda of de goede agenda erbij staat:</p>
+                        <p>
+                            <li>Open de app 'Agenda'.</li>
+                            <li>Tik onderin op Agenda's en controleer of de agenda van Gmail, Outlook of iCloud erbij staat.</li>
+                            <li>Tik op Gereed.</li>
+                        </p>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Weergave agenda iPhone aanpassen</h3>
+                        <p>We duiken de agenda in.</p>
+                        <p>
+                            <li>U ziet de jaarweergave. Tik op Vandaag om de dagweergave te zien.</li>
+                            <li>Tik linksboven op de huidige maand om de planning van de hele maand te bekijken.</li>
+                            <li>Veeg omhoog of omlaag om een andere maand te zien.</li>
+                            <li>Tik op het jaartal linksboven voor de jaarweergave.</li>
+                            <li>Veeg omhoog of omlaag om een ander jaar te zien.</li>
+                            <li>De huidige dag is rood omcirkeld.</li>
+                        </p>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Nieuwe afspraak toevoegen</h3>
+                        <p>Voeg zo een nieuwe activiteit toe:</p>
+                        <p>
+                            <li>Tik op de dag.</li>
+                            <li>Tik rechtsboven op het plusteken.</li>
+                            <li>Typ de naam van de activiteit.</li>
+                            <li>Tik in het veld 'Locatie of videogesprek'.</li>
+                            <li>Typ de locatie van de afspraak. Dat kan gewoon 'Bij Marie thuis' zijn, maar ook een adres. Kies eventueel een plaats uit de voorstellen. Tik zo nodig op het toetsenbord op Gereed.</li>
+                            <li>Geef aan of het de hele dag betreft (tik op het schuifje achter 'Hele dag'). Of tik op de tijd achter 'Begin' om de starttijd te kiezen.</li>
+                            <li>Verplaats de tijd door te vegen over de uren en minuten.</li>
+                            <li>Tik op de tijd achter 'Einde' om de eindtijd in te stellen.</li>
+                            <li>Vul eventueel een andere tijdzone in als dat van toepassing is.</li>
+                            <li>Is er reistijd? Tik op Reistijd en daarna op de tijd om de reisduur aan te geven > Vorige.</li>
+                            <li>Komt de activiteit wekelijks of maandelijks terug? Tik op Herhaal en tik op de gewenste frequentie.</li>
+                            <li>Kies, als u meer agenda's heeft gekoppeld, bij 'Agenda' in welke agenda de afspraak moet komen.</li>
+                            <li>Kies eventueel op Genodigden als u mensen wilt uitnodigen voor de afspraak. Typ een e-mailadres > Gereed om de uitnodiging te verzenden.</li>
+                            <li>Tik op Vorige om terug te gaan naar de afspraak.</li>
+                            <li>Tik op Melding om een herinnering te ontvangen over de afspraak.</li>
+                            <li>Tik op het gewenste moment om de herinnering te ontvangen. Kies bijvoorbeeld 1 uur ervóór.</li>
+                            <li>De basis van de gebeurtenis is nu ingevuld. Tik op Voeg toe.</li>
+                        </p>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Afspraak wijzigen of verwijderen</h3>
+                        <p>Wijzig of verwijder een bestaande activiteit.</p>
+                        <p>
+                            <li>Ga in de agenda naar de dag waarop de activiteit staat.</li>
+                            <li>Tik op de afspraak.</li>
+                            <li>Tik rechtsboven op Wijzig.</li>
+                            <li>Voor wijzigingen: pas de gewenste opties bij de activiteit aan > Gereed.</li>
+                            <li>Voor verwijderen: tik onderin op Verwijder activiteit > Verwijder activiteit.</li>
+                        </p>
+                    </section>
+                </div>
+
+            </section>
+            <section id="Mac" class="content-section">
+                <h2>Agenda gebruiken op de iPhone</h2>
+                <p>Gebruik de app Agenda op de iPhone en zet uw afspraken overzichtelijk bij elkaar. Zo hebt u ze altijd bij de hand.</p>
+                <div class="container">
+                    <section class="section">
+                        <h3>Agenda-app openen</h3>
+                        <p>Bezitters van een Mac(Book) hebben toegang tot de app Agenda. Standaard staat Agenda in het Dock.</p>
+                        <ul>
+                            <li>Klik op het rood-witte pictogram met de huidige datum.</li>
+                            <li>Is de Agenda-app nergens te zien? Klik dan in het Dock eerst op Launchpad en vervolgens op Agenda.</li>
+                            <li>Mogelijk verschijnt er een introductie met enkele eigenschappen van Agenda. Klik in dat geval op Ga door.</li>
+                        </ul>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Weergave aanpassen</h3>
+                        <p>Agenda opent standaard met een maandweergave. De rood gemarkeerde datum is de huidige dag. Gebruik de pijltjes rechtsboven om naar de volgende of vorige maand te gaan. Klik op Vandaag en u keert weer terug naar de huidige datum. In plaats van een maandoverzicht kunt u ook een andere weergave instellen. Klik hiervoor bovenaan op Dag, Week of Jaar.</p>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Meerdere agenda’s</h3>
+                        <p>Wie privé en zakelijk graag gescheiden houdt, maakt desgewenst meerdere agenda’s aan. Maar u kunt ook verschillende agenda’s voor bijvoorbeeld gezinsuitjes, vriendenbijeenkomsten en verenigingsactiviteiten bijhouden. De keuze is aan u. Voeg als volgt een nieuwe agenda toe:</p>
+                        <ul>
+                            <li>Klik bovenaan in de menubalk op Archief > Nieuwe agenda.</li>
+                            <li>Aan de linkerkant verschijnt de nieuwe agenda. Klik op Naamloos.</li>
+                            <li>Geef de nieuwe agenda een relevante naam, bijvoorbeeld ‘Vriendenuitjes’ of ‘Vereniging’.</li>
+                            <li>Druk op de Enter-toets.</li>
+                            <li>Elke nieuwe agenda krijgt een ander kleurtje. Wilt u de kleur wijzigen? Klik dan met de rechtermuisknop op de naam van de agenda en kies de gewenste kleur.</li>
+                        </ul>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Activiteit toevoegen</h3>
+                        <p>Voeg een afspraak of activiteit aan Agenda toe. Dat werkt zo:</p>
+                        <ul>
+                            <li>Dubbelklik op een datum en eventueel een tijdstip. Er opent een klein venster.</li>
+                            <li>Typ in het veld ‘Nieuwe activiteit’ de naam van de afspraak of activiteit.</li>
+                            <li>Klik achter de zojuist ingevoerde naam op het uitklapmenu. Bepaal nu in welke agenda u de activiteit of afspraak wilt opslaan.</li>
+                            <li>Klik op Voeg locatie of videogesprek toe en typ bijvoorbeeld (een deel van) een stad, dorp, hotel, restaurant of theater. Klik in de lijst met suggesties op het juiste resultaat.</li>
+                            <li>Klik op de datum, waarna u de begin- en eindtijd invult. In plaats daarvan kunt u ook de optie ‘hele dag’ aanvinken.</li>
+                            <li>Keert deze activiteit wekelijks of maandelijks terug? Klik achter ‘herhaling’ op het uitklapmenu en kies ‘Elke week’ of ‘Elke maand’.</li>
+                            <li>Agenda geeft u voorafgaand aan de activiteit eventueel een seintje. Klik achter ‘melding’ op het uitklapmenu en bepaal dat u bijvoorbeeld een dag of week van tevoren een melding wenst te ontvangen.</li>
+                            <li>Druk tot slot op de Enter-toets.</li>
+                        </ul>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Mensen uitnodigen</h3>
+                        <p>Nodig andere mensen voor een afspraak of activiteit uit. Dat gebeurt via e-mail. Een voorwaarde is dat de persoon in kwestie in de Contacten-app voorkomt. Hoe dat werkt, leest u in het artikel 'Adresboek Mac beheren'. Nodig zo iemand uit:</p>
+                        <ul>
+                            <li>Dubbelklik op een bestaand agendapunt of maak een nieuwe activiteit aan (zie hierboven).</li>
+                            <li>Klik op Voeg genodigden toe.</li>
+                            <li>Typ de naam van de persoon. Verschijnt het juiste contact in beeld? Druk dan op Enter of klik op deze naam.</li>
+                            <li>Voeg eventueel nog meer genodigden toe.</li>
+                            <li>Klik op Verstuur om de uitnodiging te verzenden.</li>
+                        </ul>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Activiteit verwijderen</h3>
+                        <p>Het gebeurt weleens dat een activiteit of afspraak onverhoopt niet doorgaat. U kunt het agendapunt dan wissen. Dat werkt zo:</p>
+                        <ul>
+                            <li>Klik met de rechtermuisknop op de afspraak of activiteit.</li>
+                            <li>Klik in het snelmenu op Verwijder.</li>
+                            <li>Klik indien nodig nogmaals op Verwijder.</li>
+                            <li>Zijn er personen voor de afspraak of activiteit uitgenodigd? Alle genodigden ontvangen dan via e-mail een annuleringsbericht.</li>
+                        </ul>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Agenda-accounts toevoegen</h3>
+                        <p>Mogelijk beheert u al elders een digitale agenda, bijvoorbeeld bij Google of Microsoft. Het is mogelijk om deze afspraken en activiteiten aan Agenda op de Mac toe te voegen.</p>
+                        <ul>
+                            <li>Klik bovenaan in de menubalk op Agenda > Voeg account toe.</li>
+                            <li>Er verschijnt een venster met meerdere aanbieders. Maak een keuze en klik op Ga door.</li>
+                            <li>De resterende stappen hangen af van welke aanbieder u kiest.</li>
+                            <li>Vul uw accountgegevens in om de agendagegevens naar de Mac te kopiëren.</li>
+                        </ul>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Agenda synchroniseren</h3>
+                        <p>Afspraken die u in de Agenda-app op een Mac noteert worden online bewaard in uw Apple-account. Daardoor ziet u ze ook op uw iPhone of iPad, tenminste als met hetzelfde Apple ID is ingelogd. Dit gaat ook omgekeerd: een afspraak ingevoerd op uw iPhone is ook zichtbaar op uw Mac. Dit noemt men het synchroniseren van de agenda. Hebt u nog geen Apple ID of weet u niet wat dat is? Lees dan eerst de tips 'Apple ID aanmaken' en 'Apple ID beheren'.</p>
+                    </section>
+                
+                    <section class="section">
+                        <h3>iCloud activeren voor Agenda</h3>
+                        <p>Is de afspraak op de iPhone niet zichtbaar? Waarschijnlijk staan de instellingen van iCloud op de Mac en/of iPhone dan niet goed. iCloud is de naam van de online opslagdienst waarmee Apple-apparaten allerlei gegevens synchroniseren, zoals agenda’s. Wilt u meer weten over deze online opslagdienst? Lees dan het artikel ‘Wat is iCloud?’.</p>
+                        <p>Geef op een Mac aan dat u iCloud voor Agenda wilt activeren. Dat werkt zo:</p>
+                        <ul>
+                            <li>Klik linksboven in de menubalk op het Apple-logo.</li>
+                            <li>Klik op Systeeminstellingen.</li>
+                            <li>Klik op Apple ID.</li>
+                            <li>Klik rechts op iCloud.</li>
+                            <li>Klik onder ‘Apps die iCloud gebruiken’ op Toon meer apps (macOS Sonoma) of Toon alle (macOS Ventura).</li>
+                            <li>Klik op het schuifje achter 'iCloud-agenda' (macOS Sonoma) of 'Agenda's' (macOS Ventura) zodat deze blauw wordt.</li>
+                        </ul>
+                        <p>Geef op een iPhone of iPad aan dat u iCloud voor Agenda wilt activeren. Dat werkt zo:</p>
+                        <ul>
+                            <li>Open de app Instellingen. Dat is het pictogram met de tandwielen.</li>
+                            <li>Tik op uw naam.</li>
+                            <li>Tik op iCloud.</li>
+                            <li>Tik onder 'Apps die iCloud gebruiken' op Toon alles.</li>
+                            <li>Tik op iCloud-agenda en zorg dat het schuifje achter 'Gebruik op deze iPhone' groen is door er eventueel op te tikken.</li>
+                            <li>Tik op Vorige.</li>
+                            <li>Scrol naar beneden en zorg ook dat het schuifje achter ‘Agenda’ groen is door er eventueel op te tikken.</li>
+                        </ul>
+                    </section>
+
+                
+                    
+                </div>
+
+            </section>
+            <section id="Andriod" class="content-section">
+                <h2>Afspraak plannen in Google Agenda op Android-toestel</h2>
+                <p>Nooit meer een afspraak vergeten? Zet deze dan in de app Google Agenda op uw Android-toestel.</p>
+                <div class="container">
+                    <section class="section">
+                        <h3>Google Agenda: een online agenda</h3>
+                        <p>Het is handig om afspraken meteen te kunnen noteren. Bijvoorbeeld een leuke lunch met vrienden of een bezoek aan de tandarts. De Google Agenda is hiervoor ideaal. Iedereen met een Google-account kan 'm op zowel de pc als op de telefoon gebruiken. Zet in deze online agenda op elk moment afspraken en andere belangrijke zaken. Zo vergeet u ze niet.</p>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Agenda bekijken</h3>
+                        <p>Bekijk zo de online agenda op uw Android-toestel:</p>
+                        <ul>
+                            <li>Open de app Google Agenda en log eventueel in met uw Google-account.</li>
+                            <li>De agenda van deze week opent. Tik linksboven op het pictogram van drie streepjes als u een andere weergave wilt instellen.</li>
+                            <li>Tik op Planning, Dag, 3 dagen, Week of Maand.</li>
+                            <li>De weergave verandert direct.</li>
+                        </ul>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Nieuwe afspraak inplannen</h3>
+                        <p>Zet zo eenvoudig een afspraak in de agenda:</p>
+                        <ul>
+                            <li>Tik rechtsonder op het pictogram van een plusteken.</li>
+                            <li>Tik rechtsonder op Afspraak.</li>
+                            <li>Typ bij 'Titel toevoegen' wat voor afspraak u hebt.</li>
+                            <li>Tik om de begintijd en -dag in te stellen op de bovenste datum.</li>
+                            <li>Een kalender opent. Tik naast de uitgeschreven datum op het pictogram van een potlood.</li>
+                            <li>Tik op het pictogram van een kalender naast de datum.</li>
+                            <li>Valt de afspraak in een ander jaar? Tik op de maand en het jaartal onder de datum.</li>
+                            <li>Tik op het juiste jaar.</li>
+                            <li>Om een andere maand te kiezen, tik op het pijltje naar links of rechts.</li>
+                            <li>Tik op de juiste datum > Ok.</li>
+                            <li>Tik op de begintijd om deze in te stellen.</li>
+                            <li>Een klok verschijnt. Beweeg de wijzer om het uur in te stellen en stel daarna de minuten in.</li>
+                            <li>Tik op Ok.</li>
+                            <li>Stel de eindtijd op dezelfde manier in.</li>
+                            <li>Tik rechtsboven op Opslaan als u verder niks wilt invullen.</li>
+                            <li>De afspraak staat in de agenda.</li>
+                        </ul>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Afspraak herhalen in agenda</h3>
+                        <p>Soms komt een afspraak vaker voor. Bijvoorbeeld elke maandagochtend een groepsles in de sportschool. Laat deze afspraak dan zo terugkeren:</p>
+                        <ul>
+                            <li>Open de afspraak.</li>
+                            <li>Tik bovenaan op het pictogram van een potlood.</li>
+                            <li>Tik op Niet herhaald.</li>
+                            <li>Kies hoe vaak de afspraak terug moet komen, bijvoorbeeld Elke week.</li>
+                            <li>Tik bovenaan op Opslaan als u geen andere gegevens meer hoeft in te vullen.</li>
+                        </ul>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Locatie toevoegen aan afspraak</h3>
+                        <p>Noteer op welke plek de afspraak plaatsvindt. Dan hoeft u dat later niet nog eens op te zoeken.</p>
+                        <ul>
+                            <li>Open de afspraak.</li>
+                            <li>Tik bovenaan op het pictogram van een potlood.</li>
+                            <li>Tik op Locatie toevoegen.</li>
+                            <li>Geef eventueel eerst toestemming voor het gebruik van locatievoorzieningen.</li>
+                            <li>Vul de locatie in. Tijdens het typen verschijnen suggesties vanuit Google Maps.</li>
+                            <li>Tik op het gewenste adres.</li>
+                            <li>Tik bovenaan op Opslaan als u geen andere gegevens meer hoeft in te vullen.</li>
+                        </ul>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Herinnering afspraak instellen</h3>
+                        <p>Soms is het handig om voor een afspraak een herinnering te krijgen. Standaard staat deze melding ingesteld op dertig minuten voor de afspraak. U kunt de herinnering ook eerder of later ontvangen.</p>
+                        <ul>
+                            <li>Open de afspraak.</li>
+                            <li>Tik bovenaan op het pictogram van een potlood.</li>
+                            <li>Tik rechts van het pictogram van een bel en de ingestelde minuten op het kruisje om de ingestelde melding te verwijderen.</li>
+                            <li>Tik op Melding toevoegen.</li>
+                            <li>Maak een keuze uit de verschillende opties die verschijnen. Bijvoorbeeld 1 dag van tevoren.</li>
+                            <li>Tik bovenaan op Opslaan als u geen andere gegevens meer hoeft in te vullen.</li>
+                            <li>Geef zo nodig toestemming dat Agenda u meldingen stuurt.</li>
+                        </ul>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Afspraak een kleur geven</h3>
+                        <p>Geef voor meer overzicht een serie terugkerende afspraken een eigen kleur:</p>
+                        <ul>
+                            <li>Open de afspraak.</li>
+                            <li>Tik bovenaan op het pictogram van een potlood.</li>
+                            <li>Tik op Standaardkleur.</li>
+                            <li>Tik op de gewenste kleur.</li>
+                            <li>Tik op Opslaan.</li>
+                            <li>Tik op Alle afspraken.</li>
+                            <li>Tik op Opslaan.</li>
+                            <li>Alle afspraken in deze serie hebben in Agenda nu dezelfde kleur.</li>
+                        </ul>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Notitie toevoegen aan afspraak</h3>
+                        <p>Voeg eventueel een notitie toe als geheugensteun. Geef bijvoorbeeld aan waar de afspraak over gaat of met welke mensen u allemaal hebt afgesproken.</p>
+                        <ul>
+                            <li>Open de afspraak.</li>
+                            <li>Tik bovenaan op het pictogram van een potlood.</li>
+                            <li>Tik op Beschrijving toevoegen.</li>
+                            <li>Typ een tekst.</li>
+                            <li>Tik op Opslaan.</li>
+                        </ul>
+                    </section>
+                
+                    <section class="section">
+                        <h3>Agenda-item verwijderen</h3>
+                        <p>Gaat een afspraak of taak niet door? Verwijder die dan uit de agenda.</p>
+                        <ul>
+                            <li>Tik eventueel eerst op de juiste dag.</li>
+                            <li>Tik op het te verwijderen onderdeel.</li>
+                            <li>Tik op de drie puntjes rechtsboven.</li>
+                            <li>Tik op Verwijderen en maak een keuze voor alleen deze of alle items uit dezelfde serie verwijderen.</li>
+                            <li>Tik op Verwijderen.</li>
+                        </ul>
+                    </section>
+                </div>
+
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>Contact</p>
+        <a href="mailto:thomas.tooten@dkomechelen.be">thomas.tooten@dkomechelen.be</a>
+        of bel me op <a href="tel:+32475587010">0475 58 70 10</a>
+    </footer>
+
+    <script>
+        function showContent(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>

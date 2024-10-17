@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MainIndex</title>
+    <style>
+        /* Algemene instellingen */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background: url('/Afbeeldingen/IMG_5420.JPG') no-repeat center center;
+            background-size: cover;
+            color: #333;
+        }
+
+        /* Achtergrond overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            padding: 1em 0;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            color: #618ba9;
+        }
+
+        main {
+            flex: 1;
+            width: 100vw;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Menu container */
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        /* Menu styling */
+        .menu {
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+
+        .menu li {
+            list-style: none;
+            padding: 10px 20px;
+            background-color: #618ba9;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .menu li:hover {
+            background-color: #537d92;
+        }
+
+        /* Content secties */
+        .content-section {
+            display: none;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-top: 1px solid #ccc;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        iframe {
+            width: 100%;
+            height: 1000px;
+            border: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            width: 100%;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ffdd44;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Getting Things Done</h1>
+        </header>
+        <main>
+            <!-- Menu container met menu-items -->
+            <div class="menu-container">
+                <ul class="menu">
+                    <li onclick="showContent('algemeen')">Getting Things Done (GTD)</li>
+                    <li onclick="showContent('Microsoft Todo')">Microsoft To Do</li>
+                </ul>
+            </div>
+
+            <!-- Content secties -->
+            <section id="algemeen" class="content-section active">
+                <h2>Getting Things Done (GTD)</h2>
+                <iframe src="https://tjitze.nl/basis-getting-things-done/"></iframe>
+            </section>
+
+            <section id="Microsoft Todo" class="content-section">
+                <h2>Microsoft To Do</h2>
+                <p>Microsoft To Do helpen bij het orgniseren van je taken.</p>
+                <iframe src="https://support.microsoft.com/nl-nl/office/plannen-en-verbinding-maken-met-microsoft-to-do-f64171ef-f550-4151-bae3-492720f3f1aa" title="Embedded Webpage"></iframe>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>Contact</p>
+        <a href="mailto:thomas.tooten@dkomechelen.be">thomas.tooten@dkomechelen.be</a>
+        of bel me op <a href="tel:+32475587010">0475 58 70 10</a>
+    </footer>
+
+    <script>
+        function showContent(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
