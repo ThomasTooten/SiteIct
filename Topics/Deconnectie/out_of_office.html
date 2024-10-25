@@ -156,6 +156,13 @@
             margin-bottom: 0.5em;
             color: #e6e6e6;
         }
+        video {
+    width: 100%; /* Past de breedte aan om het binnen het main content gebied te centreren */
+    max-width: 700px; /* Maximale breedte voor grotere schermen */
+    border-radius: 8px; /* Ronde hoeken voor een nette uitstraling */
+    margin-top: 20px; /* Ruimte boven de video */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Schaduw voor diepte */
+}
     </style>
 </head>
 <body>
@@ -178,10 +185,13 @@
             <!-- Content secties -->
             <section id="algemeen" class="content-section active">
                 <h2>Algemeen</h2>
+                <section class="copy-block">
+                    <video src="Video/Out-of-Office.mp4" controls></video>
+                </section>
                 <h3>Periode 2024-2025</h3>
                 <section class="copy-block">
                     <ul>
-                        <li>HERFSTVAKANTIE: 28/10/2024 - 03/11/2024</li>
+                        <li>HERFSTVAKANTIE: 27/10/2024 - 03/11/2024</li>
                         <li>KERSTVAKANTIE: 23/12/2024 - 05/01/2025</li>
                         <li>KROKUSVAKANTIE: 03/03/2025 - 09/03/2025</li>
                         <li>PAASVAKANTIE: 07/04/2025 - 21/04/2025</li>

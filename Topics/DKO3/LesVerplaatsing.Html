@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesverplaatsing Instructies</title>
+    <style>
+        /* Algemene instellingen */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: url('https://thomastooten.github.io/SiteIct/Afbeeldingen/IMG_5420.JPG') no-repeat center center;
+            background-size: cover;
+            background-attachment: scroll;
+            color: #333;
+        }
+
+        /* Achtergrond overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 1em 0;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            color: #618ba9;
+        }
+
+        main {
+            max-width: 800px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 8px;
+            color: #333;
+            text-align: left;
+        }
+
+        main p {
+            margin-bottom: 15px;
+        }
+
+        main strong {
+            color: #618ba9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Lesverplaatsing</h1>
+    </header>
+    
+    <main>
+        <p><strong>Klik op <em>Mijn tickets</em></strong></p>
+        <p>Hier krijg je de lijst te zien van je lesverplaatsingen en hun status.</p>
+
+        <p><strong>Klik op <em>Nieuw ticket...</em></strong></p>
+        <p>Typ een omschrijving en ga verder.</p>
+
+        <p><strong>Klik op <em>Toevoegen</em></strong></p>
+        <p>Typ eventueel nog in het veld opmerking om iets te verduidelijken.</p>
+        <p>Selecteer de lesblokken die je wenst te verplaatsen.</p>
+        <p>Klik op <em>volgende stap</em></p>
+
+        <p>In de linker kolom krijg je de lijst met studenten te zien waarvoor een lesverplaatsing van toepassing is en die in een nieuw tijdsblok moeten worden geplaatst.</p>
+
+        <p><strong>Maak eerst de nieuwe lesblokken aan door op <em>Les toevoegen</em> te klikken</strong></p>
+
+        <p>Vul de juiste gegevens in en klik op <em>Opslaan</em>.</p>
+
+        <p>Als je reeds een les geeft op dat moment, krijg je een melding (je kunt dus geen twee lessen tegelijk geven).</p>
+    </main>
+</div>
+
+</body>
+</html>
