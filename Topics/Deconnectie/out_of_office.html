@@ -36,12 +36,14 @@
         }
 
         /* Container voor flex behavior */
-        .container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+.container {
+    max-width: 100%;
+    height: 100%;
+    overflow-y: auto; /* Scrollt alleen de content in de container */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
         /* Header styling */
         header {
@@ -186,7 +188,7 @@
             <section id="algemeen" class="content-section active">
                 <h2>Algemeen</h2>
                 <section class="copy-block">
-                    <video src="Video/Out-of-Office.mp4" controls></video>
+                    <video src="https://thomastooten.github.io/SiteIct/Video/Out-of-Office.mp4" controls></video>
                 </section>
                 <h3>Periode 2024-2025</h3>
                 <section class="copy-block">
